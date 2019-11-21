@@ -7,13 +7,12 @@ function cargarTabla() {
     );
 }
 function responseQuery(r) {
-    var arr = JSON.parse(r);
-    console.log(arr);
+    var jsonArr = JSON.parse(r);
     var table = document.getElementById("tablePoint");
     var new_tbody = document.createElement('tbody');
     table.replaceChild(new_tbody, table.tBodies[0]);
-    for (var i = 0; i < arr.length; i++) {
-        var value = arr[i];
+    for (var i = 0; i < jsonArr.length; i++) {
+        var value = jsonArr[i];
         var row = new_tbody.insertRow();
         var des = row.insertCell(0);
         var lat = row.insertCell(1);
